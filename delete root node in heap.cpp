@@ -30,6 +30,10 @@ void downHeapify(vector<int> &heap , int idx = 0){
     }
     else if(left < heap.size() and right >= heap.size()){
         int x = compare(heap[idx] , heap[left]);
+        if(x = heap[idx]){
+            return;
+        }
+        swap(heap[idx] , heap[left]);
         return downHeapify(heap , left);
     }
     return;
